@@ -1,0 +1,5 @@
+c:\users\jamile oliveira\documents\visual studio 2015\Projects\ByteBank\ByteBank\bin\Release\ByteBank.exe.config
+c:\users\jamile oliveira\documents\visual studio 2015\Projects\ByteBank\ByteBank\bin\Release\ByteBank.exe
+c:\users\jamile oliveira\documents\visual studio 2015\Projects\ByteBank\ByteBank\bin\Release\ByteBank.pdb
+c:\users\jamile oliveira\documents\visual studio 2015\Projects\ByteBank\ByteBank\obj\Release\ByteBank.exe
+c:\users\jamile oliveira\documents\visual studio 2015\Projects\ByteBank\ByteBank\obj\Release\ByteBank.pdb
