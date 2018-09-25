@@ -4,12 +4,30 @@ namespace ByteBank{
 
     public class ContaCorrente
     {
-        private Cliente _titular;
-        private double _saldo = 100;
+        public Cliente Titular { get; set; }
 
-        public Cliente Titular{ get; set; }
-        public int Agencia { get; set; }
+        public static int TotalDeContasCriadas { get; private set; }
+
+        private int _agencia;
+        public int Agencia
+        {
+            get
+            {
+                return _agencia;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+
+                _agencia = value;
+            }
+        }
         public int Numero { get; set; }
+
+        private double _saldo = 100;
 
         public double Saldo
         {
@@ -19,24 +37,34 @@ namespace ByteBank{
             }
             set
             {
-                if(value < 0)
+                if (value < 0)
                 {
                     return;
                 }
+
                 _saldo = value;
             }
         }
 
+
+        public ContaCorrente(int agencia, int numero)
+        {
+            Agencia = agencia;
+            Numero = numero;
+
+            TotalDeContasCriadas++;
+        }
+
+
         public bool Sacar(double valor)
         {
-            if (this._saldo < valor)
+            if (_saldo < valor)
             {
                 return false;
             }
 
-            this._saldo -= valor;
+            _saldo -= valor;
             return true;
-
         }
 
         public void Depositar(double valor)
@@ -44,17 +72,18 @@ namespace ByteBank{
             _saldo += valor;
         }
 
+
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
-            if(this._saldo < valor)
+            if (_saldo < valor)
             {
                 return false;
             }
+
             _saldo -= valor;
             contaDestino.Depositar(valor);
             return true;
-
-            }
         }
-
     }
+
+}

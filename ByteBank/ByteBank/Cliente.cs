@@ -8,6 +8,8 @@ namespace ByteBank
 {
     public class Cliente
     {
+        private string _cpf;
+
         public string Nome { get; set; }
         public string CPF
         {
@@ -17,12 +19,10 @@ namespace ByteBank
             }
             set
             {
-                // Lógica de Validação de CPF
+                // Escrevo minha lógica de validação de CPF
                 _cpf = value;
             }
         }
-            
         public string Profissao { get; set; }
-
     }
 }
